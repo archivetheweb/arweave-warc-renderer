@@ -168,7 +168,7 @@ export default function Replay() {
           <div className="w-full h-full flex justify-center flex-col items-center ">
             <replay-web-page
               source={data.sourceURL}
-              url={"https://aljazeera.com"}
+              url={processURL(data.data.originalURL)}
               embed="replayonly"
               replayBase="./replay/"
             ></replay-web-page>
