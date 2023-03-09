@@ -2,15 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+    };
+  },
+  assetPrefix: ".",
   images: {
-    domains: ["arweave.net"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "arweave.net",
-        pathname: "*",
-      },
-    ],
+    loader: "custom",
   },
 };
 
