@@ -14,6 +14,7 @@ export default function Replay() {
     error: "",
     sourceURL: "",
   });
+  const [listURL, setListURL] = useState(false);
 
   useEffect(() => {
     let tx = router.query.tx as string;
@@ -150,12 +151,22 @@ export default function Replay() {
                   View on Arweave
                 </Link>{" "}
               </div>
+              <div>
+                {" "}
+                <div className="flex gap-3">
+                  <span>List URLs</span>
+                  <input
+                    type="checkbox"
+                    className="toggle bg-funpurple"
+                    checked={listURL}
+                    onClick={() => setListURL(!listURL)}
+                  />
+                </div>
+              </div>
             </div>
             <div className=" justify-end hidden md:flex">
               <a
-                href={
-                  "https://archivetheweb.com/url?url=" + data.data.originalURL
-                }
+                href={"https://archivetheweb.com/url?url=" + data.data.url}
                 target="_blank"
                 rel={"noreferrer"}
                 className="btn w-fit justify-end bg-funpurple normal-case  text-[#FFFFFF] hover:bg-funpurple/75 border-none"
@@ -168,7 +179,7 @@ export default function Replay() {
           <div className="w-full h-full flex justify-center flex-col items-center ">
             <replay-web-page
               source={data.sourceURL}
-              url={processURL(data.data.originalURL)}
+              url={listURL ? "" : processURL(data.data.originalURL)}
               embed="replayonly"
               replayBase="./replay/"
             ></replay-web-page>
