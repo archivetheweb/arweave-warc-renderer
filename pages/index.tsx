@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -21,9 +20,11 @@ export default function Replay() {
     if (!tx) {
       setData({
         ...data,
+        isLoading: false,
         error:
           "No tx field set. Make sure you set a tx field in the url (i.e url.com?tx=<TX_ID>)",
       });
+      return;
     }
 
     (async () => {
@@ -39,6 +40,7 @@ export default function Replay() {
         if (data.length == 0) {
           setData({
             ...data,
+            isLoading: false,
             error:
               "Could not find bundle information for tx " +
               tx +
@@ -84,7 +86,7 @@ export default function Replay() {
         console.error(e);
       }
     })();
-  }, [router]);
+  }, [router.query.tx]);
 
   return (
     <div>
@@ -108,8 +110,8 @@ export default function Replay() {
             <div className="flex gap-8  ">
               <div className="flex justify-center content-center items-center">
                 <Link href={"/"}>
-                  <Image
-                    src={logo}
+                  <img
+                    src={logo.src}
                     alt="logo"
                     style={{
                       maxHeight: "41px",
