@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import logo from "../public/logo.png";
 import moment from "moment";
 import axios from "axios";
 
