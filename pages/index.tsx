@@ -111,7 +111,9 @@ export default function Replay() {
               <div className="flex justify-center content-center items-center">
                 <Link href={"/"}>
                   <img
-                    src={logo.src}
+                    src={
+                      "https://arweave.net/1PGyJAWqd6JCc66byIgSj7_8LuNLo33DY8mwWDWymrs"
+                    }
                     alt="logo"
                     style={{
                       maxHeight: "41px",
