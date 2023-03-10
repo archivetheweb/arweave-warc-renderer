@@ -8,9 +8,9 @@ This repository is the [ANS-108](https://github.com/ArweaveTeam/arweave-standard
 
 Main application is deployed at [archivetheweb.com](https://archivetheweb.com/).
 
-Current `Render-With`: [m2s7Wam0E6PGuKcLHRkFQXo9ou4ASsEtdutlFKqbge8](https://arweave.net/zngmvfYcOirURW6UKvuP7bmwCYukpZMbh90osAtYN3g)
+Current `Render-With`: [zngmvfYcOirURW6UKvuP7bmwCYukpZMbh90osAtYN3g](https://arweave.net/zngmvfYcOirURW6UKvuP7bmwCYukpZMbh90osAtYN3g)
 
-[Example](https://arweave.net/zngmvfYcOirURW6UKvuP7bmwCYukpZMbh90osAtYN3g?tx=EsrKQBibbsDr5kQlKzQbsWmFfxYjCN38hL73XanHmy4)
+[Example](https://arweave.net/zngmvfYcOirURW6UKvuP7bmwCYukpZMbh90osAtYN3g/?tx=EsrKQBibbsDr5kQlKzQbsWmFfxYjCN38hL73XanHmy4)
 
 ## Getting Started
 
