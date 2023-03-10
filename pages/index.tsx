@@ -22,7 +22,7 @@ export default function Replay() {
         ...data,
         isLoading: false,
         error:
-          "No tx field set. Make sure you set a tx field in the url (i.e url.com?tx=<TX_ID>)",
+          "No tx field set. Make sure you set a tx field in the url (i.e https://example.com/?tx=<TX_ID>)",
       });
       return;
     }
