@@ -183,7 +183,11 @@ export default function Replay() {
               source={data.sourceURL}
               url={listURL ? "" : processURL(data.data.originalURL)}
               embed="replayonly"
-              replayBase="./replay/"
+              replayBase={
+                window.location.host.includes("localhost")
+                  ? "/replay/"
+                  : window.location.pathname + "/replay/"
+              }
             ></replay-web-page>
           </div>
         </div>
