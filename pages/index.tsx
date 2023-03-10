@@ -89,7 +89,7 @@ export default function Replay() {
   }, [router.query.tx]);
 
   const handleClick = () => {
-    router.push("?tx=" + arweaveTxID);
+    window.location.search = "?tx=" + arweaveTxID;
   };
 
   return (
