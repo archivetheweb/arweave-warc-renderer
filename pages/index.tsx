@@ -13,6 +13,7 @@ export default function Replay() {
     sourceURL: "",
   });
   const [listURL, setListURL] = useState(false);
+  const [arweaveTxID, setArweaveTxID] = useState("");
 
   useEffect(() => {
     let tx = router.query.tx as string;
@@ -87,13 +88,34 @@ export default function Replay() {
     })();
   }, [router.query.tx]);
 
+  const handleClick = () => {
+    router.push("?tx=" + arweaveTxID);
+  };
+
   return (
     <div>
       {!data.isLoading && data.error && (
-        <div className="flex flex-col h-screen w-full ">
+        <div className="flex flex-col h-screen w-full items-center ">
           <div className="flex justify-center content-center items-center h-full">
             <div className="flex-col justify-center content-center items-center">
               Error: {data.error}
+              <div className="flex items-center justify-center pt-4 w-full gap-4">
+                <input
+                  type="text"
+                  onKeyDown={(e) => {
+                    e.key === "Enter" && handleClick();
+                  }}
+                  onChange={(e) => setArweaveTxID(e.target.value)}
+                  placeholder="Input Arweave TxID"
+                  className="input input-bordered w-full max-w-xs"
+                />
+                <div
+                  onClick={handleClick}
+                  className="btn w-fit justify-end bg-funpurple normal-case  text-[#FFFFFF] hover:bg-funpurple/75 border-none"
+                >
+                  Submit
+                </div>
+              </div>
             </div>
           </div>
         </div>
